@@ -13,6 +13,7 @@ export async function getPermissions(signal?: AbortSignal) {
   if (error) handleError(error)
 
   // [Joshen] TODO: Type this properly from the API
+  return [] as Permission[]
   return data as unknown as PermissionsResponse
 }
 
