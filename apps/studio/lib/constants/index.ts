@@ -3,7 +3,7 @@
 export * from './infrastructure'
 
 export const IS_PLATFORM = process.env.NEXT_PUBLIC_IS_PLATFORM === 'true'
-export const DEFAULT_HOME = IS_PLATFORM ? '/organizations' : '/project/default'
+export const DEFAULT_HOME = !IS_PLATFORM ? '/organizations' : '/project/default'
 
 export const API_URL = (() => {
   //  If running in platform, use API_URL from the env var
@@ -17,7 +17,7 @@ export const API_URL = (() => {
   return '/api'
 })()
 
-export const PG_META_URL = IS_PLATFORM
+export const PG_META_URL = !IS_PLATFORM
   ? process.env.PLATFORM_PG_META_URL
   : process.env.STUDIO_PG_META_URL
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
