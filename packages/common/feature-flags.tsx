@@ -119,10 +119,10 @@ export const FeatureFlagProvider = ({
           disableComputeSizeChanges: false,
           disableProjectNameChanges: false,
           customDomainsDisabledDueToQuota: false,
-          disableProjectUpgrade: false,
-          disableProjectRestarts: false,
-          disableProjectTransfer: false,
-          disableProjectVersionSelection: false,
+          disableProjectUpgrade: true,
+          disableProjectRestarts: true,
+          disableProjectTransfer: true,
+          disableProjectVersionSelection: true,
           // Infra
           allowOrioleDb: true,
           warehouse: true,
@@ -132,7 +132,7 @@ export const FeatureFlagProvider = ({
           disableAssistantPrompts: false,
           newApiKeys: true,
       }
-      
+
       flagStore.hasLoaded = true
 
       if (mounted) {
