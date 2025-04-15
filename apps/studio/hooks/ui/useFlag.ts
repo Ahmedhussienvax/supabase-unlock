@@ -9,7 +9,6 @@ const isObjectEmpty = (obj: Object) => {
 }
 
 export function useFlag<T = boolean>(name: string) {
-  return true
   const flagStore = useFeatureFlags()
 
   const store = flagStore.configcat

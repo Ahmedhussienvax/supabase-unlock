@@ -82,27 +82,57 @@ export const FeatureFlagProvider = ({
       let flagStore: FeatureFlagContextType = { configcat: {}, posthog: {} }
 
       // Load PH flags
-      const flags = await getFeatureFlags(API_URL)
-      if (flags) {
-        flagStore.posthog = flags
-      }
+      // const flags = await getFeatureFlags(API_URL)
+      // if (flags) {
+      //   flagStore.posthog = flags
+      // }
 
       // Load ConfigCat flags
-      if (typeof getConfigCatFlags === 'function') {
-        const flagValues = await getConfigCatFlags(user?.email)
-        let overridesCookieValue: Record<string, boolean> = {}
-        try {
-          const cookies = getCookies()
-          overridesCookieValue = JSON.parse(cookies['vercel-flag-overrides'])
-        } catch {}
+      // if (typeof getConfigCatFlags === 'function') {
+      //   const flagValues = await getConfigCatFlags(user?.email)
+      //   let overridesCookieValue: Record<string, boolean> = {}
+      //   try {
+      //     const cookies = getCookies()
+      //     overridesCookieValue = JSON.parse(cookies['vercel-flag-overrides'])
+      //   } catch {}
 
-        flagValues.forEach((item) => {
-          flagStore['configcat'][item.settingKey] =
-            overridesCookieValue[item.settingKey] ??
-            (item.settingValue === null ? null : item.settingValue ?? false)
-        })
+      //   flagValues.forEach((item) => {
+      //     flagStore['configcat'][item.settingKey] =
+      //       overridesCookieValue[item.settingKey] ??
+      //       (item.settingValue === null ? null : item.settingValue ?? false)
+      //   })
+      // }
+
+      flagStore.configcat = {
+          // UI
+          newLayoutPreview: true,
+          featurePreviewTabsTableEditor: true,
+          featurePreviewSqlEditorTabs: true,
+          edgeFunctionCreate: true,
+          // App Banner
+          ongoingIncident: false,
+          showNoticeBanner: false,
+          clockSkewBanner: false,
+          // Project & Organization
+          disableProjectCreationAndUpdate: false,
+          creditTopUp: false,
+          disableComputeSizeChanges: false,
+          disableProjectNameChanges: false,
+          customDomainsDisabledDueToQuota: false,
+          disableProjectUpgrade: false,
+          disableProjectRestarts: false,
+          disableProjectTransfer: false,
+          disableProjectVersionSelection: false,
+          // Infra
+          allowOrioleDb: true,
+          warehouse: true,
+          enableFlyCloudProvider: true,
+          // Other
+          reportsV2: true,
+          disableAssistantPrompts: false,
+          newApiKeys: true,
       }
-
+      
       flagStore.hasLoaded = true
 
       if (mounted) {
