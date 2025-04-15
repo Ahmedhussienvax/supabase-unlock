@@ -109,6 +109,7 @@ export const FeatureFlagProvider = ({
           featurePreviewTabsTableEditor: true,
           featurePreviewSqlEditorTabs: true,
           edgeFunctionCreate: true,
+          enableRealtimeSettings: true,
           // App Banner
           ongoingIncident: false,
           showNoticeBanner: false,
@@ -124,9 +125,9 @@ export const FeatureFlagProvider = ({
           disableProjectTransfer: true,
           disableProjectVersionSelection: true,
           // Infra
-          allowOrioleDb: true,
-          warehouse: true,
-          enableFlyCloudProvider: true,
+          allowOrioleDb: false,
+          warehouse: false,
+          enableFlyCloudProvider: false,
           // Other
           reportsV2: true,
           disableAssistantPrompts: false,
