@@ -25,6 +25,21 @@ Thanks to SupaBase for providing such an elegant and powerful product.
 ## Unlocked Features
 
 - [ ] Edge Functions
+  - [x] UI
+  - [ ] API [No codes in repo]
+- [x] Authentication
+  - [x] UI
+  - [x] API [Not fully tested]
+
+## Locked Features
+
+The features what are unnecessary or impossible to unlock.
+
+| Feature | Reason |
+| :=: | :=: |
+| [Branching](https://supabase.com/docs/guides/deployment/branching) | Not suitable for single instance |
+| Feedback | Unnecessary |
+| Telemetry | Unnecessary |
 
 ## Usage
 
