@@ -4,7 +4,7 @@
   <a href="https://github.com/iWangJiaxiang/supabase-unlock">
     <img src="https://github.com/iWangJiaxiang/supabase-unlock/actions/workflows/publish_image.yml/badge.svg?branch=unlock" alt="CI State">
   </a>
-  <a href="https://github.com/iWangJiaxiang/supabase-unlock">
+  <a href="https://github.com/iWangJiaxiang/supabase-unlock/pkgs/container/supabase-unlock">
     <img src="https://img.shields.io/badge/ghcr.io-iwangjiaxiang/supabase--unlock:latest-blue" alt="CI State">
   </a>
   
