@@ -149,7 +149,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
                   <PageTelemetry
                     API_URL={API_URL}
                     hasAcceptedConsent={hasAcceptedConsent}
-                    enabled={IS_PLATFORM}
+                    enabled={!IS_PLATFORM}
                   />
                   <GroupsTelemetry hasAcceptedConsent={hasAcceptedConsent} />
                   {!isTestEnv && <HCaptchaLoadedStore />}
